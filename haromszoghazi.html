@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a" >
+    <input type="text" id="b" >
+    <input type="text" id="c" >
+
+    <button onclick="ellenoriz()">Ellenörzés</button>
+
+    <p id="Eredmeny"></p>
+    <script>
+        function ellenoriz() {
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            const c = parseFloat(document.getElementById("c").value);
+            
+            const eredmeny = document.getElementById("Eredmeny");
+            
+             if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                eredmeny.textContent = "Nem számokat adtál meg.";
+            }
+
+            else if (a + b > c && a + c > b && b + c > a) {
+                eredmeny.textContent = "A háromszöget lehet szerkeszteni.";
+            } 
+            else {
+                eredmeny.textContent = "A háromszöget nem lehet megszerkeszteni.";
+            }
+            
+           
+        }
+ 
+
+ </script>
+
+</body>
+</html>
