@@ -1,0 +1,41 @@
+<!--java script fájl készítsetek egy szám bekérést űrlappal egy tömbbe a szám maximum 2 jegyű pozitív szám legyen ha ez megvan akkor jelenítsed meg egy táblázatban 
+az összeset az első sorban 0-9-ig 2.ban 10-19 3.ban 20-29 ... számold ki az osszes szám átlagát egy fejléc cellában az össze sor mellé -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="adat" min="0" max="99" >
+    <button type="submit" onclick="a()">Elküld</button>
+
+    <script>
+        let szamok=[]
+        function a()
+        {
+            const adatok = parseInt( document.getElementById("adat").value);
+            
+            if(adatok >= 0 && adatok <= 99 ) 
+            {
+
+            szamok.push(adatok);
+            console.log(szamok);
+            
+            }
+         
+            let elsosor= szamok.filter(e=>e>=0 && e<=9)
+            let masodiksor = szamok.filter(e=>10 && e<=19)
+            document.write(elsosor);
+        }
+          
+
+           
+
+
+    </script>
+
+</body>
+</html>
